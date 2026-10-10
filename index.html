@@ -29,7 +29,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--cream);font:400 17px/1.6 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%}
+img{display:block;max-width:100%;height:auto}
 a{color:inherit}
 .wrap{width:min(1160px,100% - 32px);margin-inline:auto}
 h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.08;letter-spacing:-.01em}
@@ -74,16 +74,18 @@ section{padding:88px 0}
 
 /* why */
 .why{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.why div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
-.why .ico{font-size:30px}
+.why>div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.why .ico{font-family:Fraunces,serif;font-weight:800;font-size:28px;color:var(--gold);line-height:1}
 .why h3{font-size:21px;margin:14px 0 8px}
 .why p{color:var(--muted);font-size:15.5px}
 
 /* menu */
-.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.item{display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;transition:border-color .2s}
+.menu{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.item{grid-column:span 2;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:border-color .2s}
+.item:nth-child(n+4){grid-column:span 3}
+.item>div{padding:20px 22px 24px}
 .item:hover{border-color:var(--gold)}
-.item img{border-radius:12px;background:#fff;aspect-ratio:16/11;object-fit:cover;width:100%}
+.item img{background:#fff;aspect-ratio:16/9;object-fit:cover;width:100%}
 .item h3{font-size:23px}
 .item .g{display:inline-block;margin:6px 0 8px;font-weight:800;font-size:13px;color:#1a120a;background:var(--gold);border-radius:999px;padding:3px 10px}
 .item p{color:var(--muted);font-size:15px}
@@ -126,7 +128,9 @@ footer{padding:40px 0 110px;color:var(--muted);font-size:15px;border-top:1px sol
   .hero-img img{aspect-ratio:4/3}
   .badge{left:14px;bottom:14px}
   .why{grid-template-columns:repeat(2,1fr)}
-  .menu{grid-template-columns:1fr}
+  .menu{grid-template-columns:repeat(2,1fr)}
+  .item,.item:nth-child(n+4){grid-column:span 1}
+  .item:last-child:nth-child(odd){grid-column:1/-1}
   .revs{grid-template-columns:1fr}
   .visit{grid-template-columns:1fr}
   .nav ul{display:none}
@@ -135,7 +139,7 @@ footer{padding:40px 0 110px;color:var(--muted);font-size:15px;border-top:1px sol
   body{font-size:16px}
   section{padding:64px 0}
   .why{grid-template-columns:1fr}
-  .item{grid-template-columns:1fr}
+  .menu{grid-template-columns:1fr}
   .nav .btn{display:none}
   .info{padding:24px 20px}
   .btn{white-space:normal;text-align:center}
@@ -187,10 +191,10 @@ footer{padding:40px 0 110px;color:var(--muted);font-size:15px;border-top:1px sol
         <p>Čisté suroviny, žádná zbytečná chemie. Rozdíl poznáte hned při prvním soustu.</p>
       </div>
       <div class="why">
-        <div><div class="ico">🐄</div><h3>BIO hovězí</h3><p>Maso z pastevního chovu, každý den čerstvé, nikdy mražené.</p></div>
-        <div><div class="ico">🥐</div><h3>Briošková bulka</h3><p>Čerstvá každý den, opečená na másle.</p></div>
-        <div><div class="ico">🍟</div><h3>Hranolky v loji</h3><p>Belgické hranolky smažené ve 100% hovězím loji — postaru, ne v oleji.</p></div>
-        <div><div class="ico">🥫</div><h3>Domácí omáčky</h3><p>Signature omáčka i ostatní děláme sami. Bez éček.</p></div>
+        <div><div class="ico">01</div><h3>BIO hovězí</h3><p>Maso z pastevního chovu, každý den čerstvé, nikdy mražené.</p></div>
+        <div><div class="ico">02</div><h3>Briošková bulka</h3><p>Čerstvá každý den, opečená na másle.</p></div>
+        <div><div class="ico">03</div><h3>Hranolky v loji</h3><p>Belgické hranolky smažené ve 100% hovězím loji — postaru, ne v oleji.</p></div>
+        <div><div class="ico">04</div><h3>Domácí omáčky</h3><p>Signature omáčka i ostatní děláme sami. Bez éček.</p></div>
       </div>
     </div>
   </section>
@@ -203,11 +207,11 @@ footer{padding:40px 0 110px;color:var(--muted);font-size:15px;border-top:1px sol
         <p>Rozmáčknuté BIO hovězí, čedar, okurky, červená cibule a signature omáčka v máslem opečené briošce.</p>
       </div>
       <div class="menu">
-        <article class="item"><img src="img/mini.jpg" alt="Mini Empire" loading="lazy" width="1200" height="675"><div><h3>Mini Empire</h3><span class="g">60 g</span><p>Stejný recept v menší porci.</p></div></article>
-        <article class="item"><img src="img/classic.jpg" alt="Smash Burger Classic" loading="lazy" width="1200" height="675"><div><h3>Smash Burger Classic</h3><span class="g">115 g</span><p>Šťavnatý smash s čedarem, okurkami a červenou cibulí.</p></div></article>
-        <article class="item"><img src="img/royal.jpg" alt="Smash Burger Royal" loading="lazy" width="1200" height="675"><div><h3>Smash Burger Royal</h3><span class="g">170 g · oblíbený</span><p>Víc masa, rozpuštěný čedar, čerstvá brioška.</p></div></article>
-        <article class="item"><img src="img/empire.jpg" alt="Smash Burger Empire" loading="lazy" width="1200" height="675"><div><h3>Smash Burger Empire</h3><span class="g">225 g · oblíbený</span><p>Dvakrát rozmáčknutý, bohatě obložený. Pro opravdový hlad.</p></div></article>
-        <article class="item"><img src="img/hranolky.jpg" alt="Belgické hranolky" loading="lazy" width="1200" height="675"><div><h3>Belgické hranolky</h3><span class="g">střední / velké</span><p>Křupavé, smažené ve 100% hovězím loji.</p></div></article>
+        <article class="item"><img src="img/mini.jpg" alt="Mini Empire" width="1200" height="675"><div><h3>Mini Empire</h3><span class="g">60 g</span><p>Stejný recept v menší porci.</p></div></article>
+        <article class="item"><img src="img/classic.jpg" alt="Smash Burger Classic" width="1200" height="675"><div><h3>Smash Burger Classic</h3><span class="g">115 g</span><p>Šťavnatý smash s čedarem, okurkami a červenou cibulí.</p></div></article>
+        <article class="item"><img src="img/royal.jpg" alt="Smash Burger Royal" width="1200" height="675"><div><h3>Smash Burger Royal</h3><span class="g">170 g · oblíbený</span><p>Víc masa, rozpuštěný čedar, čerstvá brioška.</p></div></article>
+        <article class="item"><img src="img/empire.jpg" alt="Smash Burger Empire" width="1200" height="675"><div><h3>Smash Burger Empire</h3><span class="g">225 g · oblíbený</span><p>Dvakrát rozmáčknutý, bohatě obložený. Pro opravdový hlad.</p></div></article>
+        <article class="item"><img src="img/hranolky.jpg" alt="Belgické hranolky" width="1200" height="675"><div><h3>Belgické hranolky</h3><span class="g">střední / velké</span><p>Křupavé, smažené ve 100% hovězím loji.</p></div></article>
       </div>
       <div class="menu-foot">
         <span>Ceny a celé aktuální menu najdete v online menu.</span>
@@ -224,10 +228,9 @@ footer{padding:40px 0 110px;color:var(--muted);font-size:15px;border-top:1px sol
       </div>
       <div class="revs">
         <figure class="rev"><div class="stars">★★★★★</div><blockquote>„Smash burger se jmenuje smash oprávněně! Jídlo bylo opravdu výborné, slečna, co nás obsluhovala, byla profesionální a moc milá. Podniku dávám 11/10.“</blockquote><cite>Tereza</cite></figure>
-        <figure class="rev"><div class="stars">★★★★★</div><blockquote>„As a passionate burger lover, I ADORE these burgers! Tasty, buttery, portions are amazing as well as truffle fries.“</blockquote><cite>Teodora</cite></figure>
+        <figure class="rev"><div class="stars">★★★★★</div><blockquote>„Jako vášnivá milovnice burgerů tyhle burgery zbožňuju! Chutné, máslové, porce jsou skvělé, stejně jako lanýžové hranolky.“</blockquote><cite>Teodora · přeloženo z angličtiny</cite></figure>
         <figure class="rev"><div class="stars">★★★★★</div><blockquote>„Pochvala obsluze, slečna byla velmi milá. Burger byl famózní. Do kuchyně velikánská pochvala a klobouček.“</blockquote><cite>Sára</cite></figure>
       </div>
-      <div class="score"><strong>9,6</strong><span>z 10 na Woltu</span></div>
     </div>
   </section>
 
@@ -249,7 +252,7 @@ footer{padding:40px 0 110px;color:var(--muted);font-size:15px;border-top:1px sol
             <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=Anglick%C3%A1+391%2F17+Praha" target="_blank" rel="noopener">Navigovat</a>
           </div>
         </dl>
-        <div class="map"><iframe title="Mapa: Burger Empire, Anglická 17, Praha" src="https://maps.google.com/maps?q=Burger%20Empire%2C%20Anglick%C3%A1%20391%2F17%2C%20Praha&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="map"><iframe title="Mapa: Burger Empire, Anglická 17, Praha" src="https://maps.google.com/maps?q=Burger%20Empire%2C%20Anglick%C3%A1%20391%2F17%2C%20Praha&z=16&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
       </div>
     </div>
   </section>
