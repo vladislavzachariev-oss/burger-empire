@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Burger Empire — smash burgery z BIO hovězího | Praha 2, Vinohrady</title>
+<meta name="description" content="Smash burgery ze 100% BIO hovězího z pastevního chovu, čerstvé brioškové bulky a belgické hranolky v hovězím loji. Anglická 17, Praha 2 – Vinohrady.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Burger Empire — Premium Quality. Golden Taste.">
+<meta property="og:description" content="Smash burgery ze 100% BIO hovězího. Anglická 17, Praha 2 – Vinohrady.">
+<meta property="og:image" content="img/podnik.jpg">
+<meta name="theme-color" content="#14100c">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Burger Empire","servesCuisine":["Burgery","Americká"],
+ "address":{"@type":"PostalAddress","streetAddress":"Anglická 391/17","addressLocality":"Praha 2 – Vinohrady","postalCode":"120 00","addressCountry":"CZ"},
+ "telephone":"+420771111513","email":"burger.empire.prague@gmail.com","url":"https://www.burger-empire.cz/",
+ "sameAs":["https://www.instagram.com/burger_empire_prague/","https://www.facebook.com/61586700953068/"]}
+</script>
+<style>
+:root{
+  --bg:#14100c; --bg2:#1d1712; --card:#241c15; --line:#3a2e22;
+  --gold:#e0a63a; --gold2:#f3c56b; --cream:#f6ecdc; --muted:#c3b29a;
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font:400 17px/1.6 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1160px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.08;letter-spacing:-.01em}
+.eyebrow{font-weight:800;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:999px;font-weight:800;text-decoration:none;transition:transform .15s,background .15s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:#1a120a}
+.btn-gold:hover{background:var(--gold2)}
+.btn-ghost{border:1.5px solid var(--line);color:var(--cream)}
+.btn-ghost:hover{border-color:var(--gold)}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(20,16,12,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:Fraunces,serif;font-weight:800;font-size:22px;text-decoration:none;letter-spacing:.02em}
+.logo b{color:var(--gold)}
+.nav ul{display:flex;gap:28px;list-style:none}
+.nav ul a{text-decoration:none;font-weight:600;color:var(--muted)}
+.nav ul a:hover{color:var(--cream)}
+.nav .btn{padding:11px 18px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:64px 0 80px}
+.hero h1{font-size:clamp(42px,6vw,78px);font-weight:800;margin:16px 0 20px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p.lead{font-size:19px;color:var(--muted);max-width:34ch}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 28px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 22px;color:var(--muted);font-size:15px}
+.facts span::before{content:"✦ ";color:var(--gold)}
+.hero-img{position:relative}
+.hero-img img{border-radius:28px;aspect-ratio:4/5;object-fit:cover;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.badge{position:absolute;left:-22px;bottom:34px;background:var(--cream);color:#1a120a;border-radius:16px;padding:14px 18px;box-shadow:0 14px 40px rgba(0,0,0,.4)}
+.badge strong{font-family:Fraunces,serif;font-size:30px;display:block;line-height:1}
+.badge small{font-weight:600;font-size:13px}
+
+/* sections */
+section{padding:88px 0}
+.alt{background:var(--bg2);border-block:1px solid var(--line)}
+.head{max-width:640px;margin-bottom:44px}
+.head h2{font-size:clamp(32px,4.2vw,50px);margin-top:12px}
+.head p{color:var(--muted);margin-top:14px}
+
+/* why */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.why div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.why .ico{font-size:30px}
+.why h3{font-size:21px;margin:14px 0 8px}
+.why p{color:var(--muted);font-size:15.5px}
+
+/* menu */
+.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.item{display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;transition:border-color .2s}
+.item:hover{border-color:var(--gold)}
+.item img{border-radius:12px;background:#fff;aspect-ratio:16/11;object-fit:cover;width:100%}
+.item h3{font-size:23px}
+.item .g{display:inline-block;margin:6px 0 8px;font-weight:800;font-size:13px;color:#1a120a;background:var(--gold);border-radius:999px;padding:3px 10px}
+.item p{color:var(--muted);font-size:15px}
+.menu-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:28px;color:var(--muted)}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:16px}
+.stars{color:var(--gold);letter-spacing:3px}
+.rev blockquote{font-size:16.5px}
+.rev cite{font-style:normal;font-weight:800;color:var(--muted);margin-top:auto}
+.score{display:flex;align-items:center;gap:14px;margin-top:28px;color:var(--muted)}
+.score strong{font-family:Fraunces,serif;font-size:34px;color:var(--cream)}
+
+/* visit */
+.visit{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:stretch}
+.info{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px;display:flex;flex-direction:column;gap:22px}
+.info dt{font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.info dd{font-size:18px;margin-top:4px}
+.visit>*{min-width:0}
+.info dd{overflow-wrap:anywhere}
+.info dd a{text-decoration:none}
+.info dd a:hover{color:var(--gold2)}
+.info .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
+.map{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);min-height:380px}
+.map iframe{width:100%;height:100%;min-height:380px;border:0;filter:grayscale(.3) contrast(1.05)}
+
+footer{padding:40px 0 110px;color:var(--muted);font-size:15px;border-top:1px solid var(--line)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--gold)}
+.social{display:flex;gap:18px}
+
+/* mobile bottom bar */
+.bar{display:none}
+
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr;gap:36px;padding-top:36px}
+  .hero-img{order:-1}
+  .hero-img img{aspect-ratio:4/3}
+  .badge{left:14px;bottom:14px}
+  .why{grid-template-columns:repeat(2,1fr)}
+  .menu{grid-template-columns:1fr}
+  .revs{grid-template-columns:1fr}
+  .visit{grid-template-columns:1fr}
+  .nav ul{display:none}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  section{padding:64px 0}
+  .why{grid-template-columns:1fr}
+  .item{grid-template-columns:1fr}
+  .nav .btn{display:none}
+  .info{padding:24px 20px}
+  .btn{white-space:normal;text-align:center}
+  .bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(20,16,12,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .bar .btn{justify-content:center;padding:14px 10px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">BURGER <b>EMPIRE</b></a>
+    <ul>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#standard">Zlatý standard</a></li>
+      <li><a href="#recenze">Recenze</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <a class="btn btn-gold" href="#objednat">Objednat</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <span class="eyebrow">Praha 2 · Vinohrady · Anglická 17</span>
+      <h1>Smash burger, ze kterého máte <em>dobrý pocit.</em></h1>
+      <p class="lead">100% BIO hovězí z pastevního chovu, každý den čerstvé brioškové bulky a belgické hranolky v hovězím loji. Bez éček a rostlinných olejů.</p>
+      <div class="cta" id="objednat">
+        <a class="btn btn-gold" href="https://wolt.com/cs/cze/prague/restaurant/burger-empire1" target="_blank" rel="noopener">Objednat přes Wolt</a>
+        <a class="btn btn-ghost" href="https://www.foodora.cz/restaurant/tj5m/burger-empire-tj5m" target="_blank" rel="noopener">Foodora</a>
+        <a class="btn btn-ghost" href="tel:+420771111513">Rezervace: 771 111 513</a>
+      </div>
+      <div class="facts"><span>BIO grass-fed hovězí</span><span>Domácí omáčky</span><span>Žádné polotovary</span></div>
+    </div>
+    <div class="hero-img">
+      <img src="img/podnik.jpg" alt="Dva smash burgery na litinových pánvích s belgickými hranolky a omáčkou" width="1024" height="1536" fetchpriority="high">
+      <div class="badge"><strong>9,6/10</strong><small>hodnocení na Woltu</small></div>
+    </div>
+  </div>
+
+  <section class="alt" id="standard">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Náš zlatý standard</span>
+        <h2>Vaříme tak, jak bychom vařili doma.</h2>
+        <p>Čisté suroviny, žádná zbytečná chemie. Rozdíl poznáte hned při prvním soustu.</p>
+      </div>
+      <div class="why">
+        <div><div class="ico">🐄</div><h3>BIO hovězí</h3><p>Maso z pastevního chovu, každý den čerstvé, nikdy mražené.</p></div>
+        <div><div class="ico">🥐</div><h3>Briošková bulka</h3><p>Čerstvá každý den, opečená na másle.</p></div>
+        <div><div class="ico">🍟</div><h3>Hranolky v loji</h3><p>Belgické hranolky smažené ve 100% hovězím loji — postaru, ne v oleji.</p></div>
+        <div><div class="ico">🥫</div><h3>Domácí omáčky</h3><p>Signature omáčka i ostatní děláme sami. Bez éček.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Menu</span>
+        <h2>Čtyři velikosti. Jeden recept.</h2>
+        <p>Rozmáčknuté BIO hovězí, čedar, okurky, červená cibule a signature omáčka v máslem opečené briošce.</p>
+      </div>
+      <div class="menu">
+        <article class="item"><img src="img/mini.jpg" alt="Mini Empire" loading="lazy" width="1200" height="675"><div><h3>Mini Empire</h3><span class="g">60 g</span><p>Stejný recept v menší porci.</p></div></article>
+        <article class="item"><img src="img/classic.jpg" alt="Smash Burger Classic" loading="lazy" width="1200" height="675"><div><h3>Smash Burger Classic</h3><span class="g">115 g</span><p>Šťavnatý smash s čedarem, okurkami a červenou cibulí.</p></div></article>
+        <article class="item"><img src="img/royal.jpg" alt="Smash Burger Royal" loading="lazy" width="1200" height="675"><div><h3>Smash Burger Royal</h3><span class="g">170 g · oblíbený</span><p>Víc masa, rozpuštěný čedar, čerstvá brioška.</p></div></article>
+        <article class="item"><img src="img/empire.jpg" alt="Smash Burger Empire" loading="lazy" width="1200" height="675"><div><h3>Smash Burger Empire</h3><span class="g">225 g · oblíbený</span><p>Dvakrát rozmáčknutý, bohatě obložený. Pro opravdový hlad.</p></div></article>
+        <article class="item"><img src="img/hranolky.jpg" alt="Belgické hranolky" loading="lazy" width="1200" height="675"><div><h3>Belgické hranolky</h3><span class="g">střední / velké</span><p>Křupavé, smažené ve 100% hovězím loji.</p></div></article>
+      </div>
+      <div class="menu-foot">
+        <span>Ceny a celé aktuální menu najdete v online menu.</span>
+        <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1Rv8iDwz6nuTC3BQ_boBFG0M3-esu1k1V?usp=share_link" target="_blank" rel="noopener">Zobrazit menu s cenami</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="recenze">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Recenze</span>
+        <h2>Co o nás říkají zákazníci</h2>
+      </div>
+      <div class="revs">
+        <figure class="rev"><div class="stars">★★★★★</div><blockquote>„Smash burger se jmenuje smash oprávněně! Jídlo bylo opravdu výborné, slečna, co nás obsluhovala, byla profesionální a moc milá. Podniku dávám 11/10.“</blockquote><cite>Tereza</cite></figure>
+        <figure class="rev"><div class="stars">★★★★★</div><blockquote>„As a passionate burger lover, I ADORE these burgers! Tasty, buttery, portions are amazing as well as truffle fries.“</blockquote><cite>Teodora</cite></figure>
+        <figure class="rev"><div class="stars">★★★★★</div><blockquote>„Pochvala obsluze, slečna byla velmi milá. Burger byl famózní. Do kuchyně velikánská pochvala a klobouček.“</blockquote><cite>Sára</cite></figure>
+      </div>
+      <div class="score"><strong>9,6</strong><span>z 10 na Woltu</span></div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Kde nás najdete</span>
+        <h2>Anglická 17, Vinohrady</h2>
+        <p>Pár minut pěšky od náměstí Míru a I. P. Pavlova. Rezervace stačí zavolat nebo napsat na WhatsApp.</p>
+      </div>
+      <div class="visit">
+        <dl class="info">
+          <div><dt>Adresa</dt><dd>Anglická 391/17<br>120 00 Praha 2 – Vinohrady</dd></div>
+          <div><dt>Telefon a WhatsApp</dt><dd><a href="tel:+420771111513">+420 771 111 513</a></dd></div>
+          <div><dt>Rozvoz (Wolt)</dt><dd>Denně 11:15–21:45</dd></div>
+          <div><dt>Spolupráce</dt><dd><a href="mailto:burger.empire.prague@gmail.com">burger.empire.prague@gmail.com</a></dd></div>
+          <div class="cta">
+            <a class="btn btn-gold" href="https://wa.me/420771111513" target="_blank" rel="noopener">Napsat na WhatsApp</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=Anglick%C3%A1+391%2F17+Praha" target="_blank" rel="noopener">Navigovat</a>
+          </div>
+        </dl>
+        <div class="map"><iframe title="Mapa: Burger Empire, Anglická 17, Praha" src="https://maps.google.com/maps?q=Burger%20Empire%2C%20Anglick%C3%A1%20391%2F17%2C%20Praha&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Burger Empire · Premium Quality. Golden Taste. · Web: <a href="https://whytelynx.cz" target="_blank" rel="noopener">Whyte Lynx</a></span>
+    <div class="social">
+      <a href="https://www.instagram.com/burger_empire_prague/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/61586700953068/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.tripadvisor.com/Restaurant_Review-g274707-d34105979-Reviews-Burger_Empire-Prague_Bohemia.html" target="_blank" rel="noopener">Tripadvisor</a>
+    </div>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Rychlé akce">
+  <a class="btn btn-gold" href="https://wolt.com/cs/cze/prague/restaurant/burger-empire1" target="_blank" rel="noopener">Objednat</a>
+  <a class="btn btn-ghost" href="tel:+420771111513">Zavolat</a>
+</nav>
+
+</body>
+</html>
