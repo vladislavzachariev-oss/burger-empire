@@ -80,16 +80,91 @@ section{padding:88px 0}
 .why p{color:var(--muted);font-size:15.5px}
 
 /* menu */
-.menu{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
-.item{grid-column:span 2;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:border-color .2s}
-.item:nth-child(n+4){grid-column:span 3}
-.item>div{padding:20px 22px 24px}
+.cats{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+.cats a{text-decoration:none;font-weight:800;font-size:15px;padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);color:var(--muted)}
+.cats a:hover{border-color:var(--gold);color:var(--cream)}
+.cat{font-size:28px;margin:0 0 18px;scroll-margin-top:88px}
+.cat:not(:first-of-type){margin-top:52px}
+.menu{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.item{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:border-color .2s}
+.item>div{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
 .item:hover{border-color:var(--gold)}
-.item img{background:#fff;aspect-ratio:16/9;object-fit:cover;width:100%}
-.item h3{font-size:23px}
-.item .g{display:inline-block;margin:6px 0 8px;font-weight:800;font-size:13px;color:#1a120a;background:var(--gold);border-radius:999px;padding:3px 10px}
+.item img{background:#fff;aspect-ratio:4/3;object-fit:cover;width:100%}
+.item h3{font-size:21px}
+.item .g{align-self:flex-start;margin:8px 0 10px;font-weight:800;font-size:13px;color:#1a120a;background:var(--gold);border-radius:999px;padding:3px 10px}
 .item p{color:var(--muted);font-size:15px}
-.menu-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:28px;color:var(--muted)}
+.buy{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:18px}
+.price{font-family:Fraunces,serif;font-weight:800;font-size:24px;white-space:nowrap}
+.price small{font:600 13px Manrope,sans-serif;color:var(--muted)}
+.add{font:800 15px Manrope,sans-serif;color:#1a120a;background:var(--gold);border:0;border-radius:999px;padding:11px 18px;cursor:pointer;transition:background .15s,transform .15s}
+.add:hover{background:var(--gold2);transform:translateY(-1px)}
+.side{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px;align-items:start;margin-top:52px}
+.side>*{min-width:0}
+.side .item{flex-direction:row}
+.side .item img{width:44%;aspect-ratio:auto;align-self:stretch;min-height:210px}
+.drinks{list-style:none;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:6px 22px}
+.drinks li{display:flex;align-items:center;gap:14px;padding:15px 0}
+.drinks li+li{border-top:1px solid var(--line)}
+.drinks b{font-weight:800}
+.drinks span{color:var(--muted);font-size:14px;display:block}
+.drinks .price{margin-left:auto;font-size:20px}
+.menu-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:36px;color:var(--muted);font-size:15px}
+.menu-foot div{display:flex;flex-wrap:wrap;gap:10px}
+
+/* cart + configurator */
+.cartbtn{font:800 16px Manrope,sans-serif;cursor:pointer;border:0}
+.cartbtn i{font-style:normal;background:#1a120a;color:var(--gold);border-radius:999px;min-width:24px;padding:1px 7px;font-size:13px;text-align:center}
+dialog{background:var(--bg2);color:var(--cream);border:1px solid var(--line);padding:0;max-width:none}
+dialog::backdrop{background:rgba(8,6,4,.7);backdrop-filter:blur(3px)}
+#cfg{border-radius:22px;width:min(480px,100% - 24px);max-height:calc(100dvh - 24px);margin:auto}
+#cart{width:min(460px,100%);height:100dvh;max-height:none;margin:0 0 0 auto;border-width:0 0 0 1px}
+.dlg{display:flex;flex-direction:column;height:100%;max-height:inherit}
+.dlg-h{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:22px 24px 14px}
+.dlg-h h3{font-size:26px}
+.dlg-b{padding:0 24px 20px;overflow-y:auto;flex:1}
+.dlg-f{padding:16px 24px calc(18px + env(safe-area-inset-bottom));border-top:1px solid var(--line);display:grid;gap:12px}
+.x{background:none;border:1.5px solid var(--line);color:var(--cream);width:38px;height:38px;border-radius:50%;font-size:20px;line-height:1;cursor:pointer;flex:none}
+.x:hover{border-color:var(--gold)}
+.dlg-b p{color:var(--muted);font-size:15px}
+fieldset{border:0;margin-top:20px}
+legend{font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.opt{display:flex;align-items:center;gap:12px;padding:11px 0;cursor:pointer}
+.opt+.opt{border-top:1px solid var(--line)}
+.opt input{accent-color:var(--gold);width:19px;height:19px;flex:none}
+.opt em{font-style:normal;margin-left:auto;color:var(--muted);white-space:nowrap}
+.qty{display:inline-flex;align-items:center;gap:4px;border:1.5px solid var(--line);border-radius:999px;padding:3px}
+.qty button{width:34px;height:34px;border-radius:50%;border:0;background:var(--card);color:var(--cream);font-size:19px;line-height:1;cursor:pointer}
+.qty button:hover{background:var(--gold);color:#1a120a}
+.qty output{min-width:26px;text-align:center;font-weight:800}
+.row{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.full{width:100%;justify-content:center;border:0;cursor:pointer;font:800 16px Manrope,sans-serif}
+.full[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+.line{display:grid;grid-template-columns:1fr auto;gap:6px 14px;padding:16px 0}
+.line+.line{border-top:1px solid var(--line)}
+.line b{font-weight:800}
+.line small{display:block;color:var(--muted);font-size:14px}
+.line .price{font-size:19px;text-align:right}
+.total{font-size:18px}
+.total strong{font-family:Fraunces,serif;font-size:28px}
+.empty{text-align:center;padding:56px 0;color:var(--muted)}
+.field{display:grid;gap:6px;margin-top:16px}
+.field span{font-weight:800;font-size:14px}
+.field input,.field select,.field textarea{font:400 16px Manrope,sans-serif;color:var(--cream);background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:13px 14px;width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--gold)}
+.note{background:var(--card);border:1px solid var(--gold);border-radius:14px;padding:16px 18px;margin-top:18px;font-size:15px}
+.note b{color:var(--gold2)}
+.back{background:none;border:0;color:var(--muted);font:600 15px Manrope,sans-serif;cursor:pointer;text-decoration:underline;justify-self:center}
+.line .back{justify-self:end}
+.line .qty{justify-self:start}
+dialog,.dlg-b{scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.extras{margin-top:16px;color:var(--muted);font-size:15px}
+.extras b{color:var(--cream)}
+.dlg-b .done{font-family:Fraunces,serif;font-weight:800;font-size:44px;color:var(--gold);line-height:1;margin-bottom:12px}
+.recap{list-style:none;margin:16px 0 14px;color:var(--muted)}
+.recap li{padding:6px 0}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:var(--cream);color:#1a120a;font-weight:800;padding:12px 20px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:40;box-shadow:0 14px 40px rgba(0,0,0,.4)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--gold2);outline-offset:2px}
 
 /* reviews */
 .revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -122,15 +197,21 @@ footer{padding:40px 0 110px;color:var(--muted);font-size:15px;border-top:1px sol
 /* mobile bottom bar */
 .bar{display:none}
 
+@media (min-width:981px) and (max-height:700px){
+  .hero{padding:20px 0 56px}
+  .hero h1{font-size:58px;margin:12px 0 16px}
+  .hero h1 em{white-space:nowrap}
+  .hero .cta{margin:24px 0 22px}
+}
 @media (max-width:980px){
+  .side{gap:44px}
   .hero{grid-template-columns:1fr;gap:36px;padding-top:36px}
   .hero-img{order:-1}
   .hero-img img{aspect-ratio:4/3}
   .badge{left:14px;bottom:14px}
   .why{grid-template-columns:repeat(2,1fr)}
   .menu{grid-template-columns:repeat(2,1fr)}
-  .item,.item:nth-child(n+4){grid-column:span 1}
-  .item:last-child:nth-child(odd){grid-column:1/-1}
+  .side{grid-template-columns:1fr}
   .revs{grid-template-columns:1fr}
   .visit{grid-template-columns:1fr}
   .nav ul{display:none}
@@ -140,7 +221,13 @@ footer{padding:40px 0 110px;color:var(--muted);font-size:15px;border-top:1px sol
   section{padding:64px 0}
   .why{grid-template-columns:1fr}
   .menu{grid-template-columns:1fr}
+  .side .item{flex-direction:column}
+  .side .item img{width:100%;aspect-ratio:4/3;min-height:0}
   .nav .btn{display:none}
+  #cart{border-width:0}
+  .dlg-h,.dlg-b{padding-inline:18px}
+  .dlg-f{padding-inline:18px}
+  .toast{bottom:92px}
   .info{padding:24px 20px}
   .btn{white-space:normal;text-align:center}
   .bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(20,16,12,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
@@ -160,7 +247,7 @@ footer{padding:40px 0 110px;color:var(--muted);font-size:15px;border-top:1px sol
       <li><a href="#recenze">Recenze</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
-    <a class="btn btn-gold" href="#objednat">Objednat</a>
+    <button class="btn btn-gold cartbtn" type="button" data-cart>Košík <i data-count>0</i></button>
   </div>
 </header>
 
@@ -171,8 +258,8 @@ footer{padding:40px 0 110px;color:var(--muted);font-size:15px;border-top:1px sol
       <h1>Smash burger, ze kterého máte <em>dobrý pocit.</em></h1>
       <p class="lead">100% BIO hovězí z pastevního chovu, každý den čerstvé brioškové bulky a belgické hranolky v hovězím loji. Bez éček a rostlinných olejů.</p>
       <div class="cta" id="objednat">
-        <a class="btn btn-gold" href="https://wolt.com/cs/cze/prague/restaurant/burger-empire1" target="_blank" rel="noopener">Objednat přes Wolt</a>
-        <a class="btn btn-ghost" href="https://www.foodora.cz/restaurant/tj5m/burger-empire-tj5m" target="_blank" rel="noopener">Foodora</a>
+        <a class="btn btn-gold" href="#menu">Vybrat z menu</a>
+        <a class="btn btn-ghost" href="https://wolt.com/cs/cze/prague/restaurant/burger-empire1" target="_blank" rel="noopener">Rozvoz přes Wolt</a>
         <a class="btn btn-ghost" href="tel:+420771111513">Rezervace: 771 111 513</a>
       </div>
       <div class="facts"><span>BIO grass-fed hovězí</span><span>Domácí omáčky</span><span>Žádné polotovary</span></div>
@@ -204,18 +291,44 @@ footer{padding:40px 0 110px;color:var(--muted);font-size:15px;border-top:1px sol
       <div class="head">
         <span class="eyebrow">Menu</span>
         <h2>Čtyři velikosti. Jeden recept.</h2>
-        <p>Rozmáčknuté BIO hovězí, čedar, okurky, červená cibule a signature omáčka v máslem opečené briošce.</p>
+        <p>Rozmáčknuté BIO hovězí, čedar, okurky, červená cibule a signature omáčka v máslem opečené briošce. Vyberte si, přidejte do košíku a vyzvedněte na Anglické.</p>
       </div>
+      <nav class="cats" aria-label="Části menu">
+        <a href="#burgery">Burgery</a><a href="#prilohy">Hranolky a omáčky</a><a href="#napoje">Nápoje</a>
+      </nav>
+
+      <h3 class="cat" id="burgery">Burgery</h3>
       <div class="menu">
-        <article class="item"><img src="img/mini.jpg" alt="Mini Empire" width="1200" height="675"><div><h3>Mini Empire</h3><span class="g">60 g</span><p>Stejný recept v menší porci.</p></div></article>
-        <article class="item"><img src="img/classic.jpg" alt="Smash Burger Classic" width="1200" height="675"><div><h3>Smash Burger Classic</h3><span class="g">115 g</span><p>Šťavnatý smash s čedarem, okurkami a červenou cibulí.</p></div></article>
-        <article class="item"><img src="img/royal.jpg" alt="Smash Burger Royal" width="1200" height="675"><div><h3>Smash Burger Royal</h3><span class="g">170 g · oblíbený</span><p>Víc masa, rozpuštěný čedar, čerstvá brioška.</p></div></article>
-        <article class="item"><img src="img/empire.jpg" alt="Smash Burger Empire" width="1200" height="675"><div><h3>Smash Burger Empire</h3><span class="g">225 g · oblíbený</span><p>Dvakrát rozmáčknutý, bohatě obložený. Pro opravdový hlad.</p></div></article>
-        <article class="item"><img src="img/hranolky.jpg" alt="Belgické hranolky" width="1200" height="675"><div><h3>Belgické hranolky</h3><span class="g">střední / velké</span><p>Křupavé, smažené ve 100% hovězím loji.</p></div></article>
+        <article class="item" data-id="mini" data-name="Mini Empire" data-price="159" data-opt="extra"><img src="img/mini.jpg" alt="Mini Empire" width="1200" height="675" loading="lazy"><div><h3>Mini Empire</h3><span class="g">60 g</span><p>Stejný recept v menší porci. Čedar, okurky, červená cibule a signature omáčka.</p><div class="buy"><span class="price">159 Kč</span><button class="add" type="button">Přidat</button></div></div></article>
+        <article class="item" data-id="classic" data-name="Smash Burger Classic" data-price="269" data-opt="extra"><img src="img/classic.jpg" alt="Smash Burger Classic" width="1200" height="675" loading="lazy"><div><h3>Smash Burger Classic</h3><span class="g">115 g</span><p>Šťavnatý smash s čedarem, okurkami, červenou cibulí a signature omáčkou.</p><div class="buy"><span class="price">269 Kč</span><button class="add" type="button">Přidat</button></div></div></article>
+        <article class="item" data-id="royal" data-name="Smash Burger Royal" data-price="339" data-opt="extra"><img src="img/royal.jpg" alt="Smash Burger Royal" width="1200" height="675" loading="lazy"><div><h3>Smash Burger Royal</h3><span class="g">170 g · oblíbený</span><p>Víc masa, rozpuštěný čedar, okurky a červená cibule v čerstvé briošce.</p><div class="buy"><span class="price">339 Kč</span><button class="add" type="button">Přidat</button></div></div></article>
+        <article class="item" data-id="empire" data-name="Smash Burger Empire" data-price="409" data-opt="extra"><img src="img/empire.jpg" alt="Smash Burger Empire" width="1200" height="675" loading="lazy"><div><h3>Smash Burger Empire</h3><span class="g">225 g · oblíbený</span><p>Dvakrát rozmáčknutý, bohatě obložený. Pro opravdový hlad.</p><div class="buy"><span class="price">409 Kč</span><button class="add" type="button">Přidat</button></div></div></article>
       </div>
+      <p class="extras"><b>Něco navíc do burgeru:</b> karamelizovaná cibule 46 Kč · jalapeño papričky 34 Kč · extra čedar 34 Kč · 60 g hovězího navíc 70 Kč</p>
+
+      <div class="side">
+        <div>
+          <h3 class="cat" id="prilohy">Hranolky a omáčky</h3>
+          <article class="item" data-id="hranolky" data-name="Belgické hranolky" data-price="89" data-opt="size,sauce"><img src="img/hranolky.jpg" alt="Belgické hranolky" width="1200" height="675" loading="lazy"><div><h3>Belgické hranolky</h3><span class="g">střední / velké</span><p>Křupavé, smažené ve 100% hovězím loji. K nim domácí omáčka: signature, BBQ nebo lanýžová.</p><div class="buy"><span class="price"><small>od</small> 89 Kč</span><button class="add" type="button">Přidat</button></div></div></article>
+          <p class="extras"><b>Omáčky k hranolkům:</b> signature 46 Kč · BBQ 59 Kč · lanýžová 89 Kč · kečup 22 Kč · majonéza 22 Kč</p>
+        </div>
+        <div>
+          <h3 class="cat" id="napoje">Nápoje</h3>
+          <ul class="drinks">
+            <li data-id="cola" data-name="Coca-Cola 0,33 l" data-price="65"><div><b>Coca-Cola</b><span>0,33 l</span></div><span class="price">65 Kč</span><button class="add" type="button" aria-label="Přidat Coca-Colu">Přidat</button></li>
+            <li data-id="zero" data-name="Coca-Cola Zero 0,33 l" data-price="65"><div><b>Coca-Cola Zero</b><span>0,33 l</span></div><span class="price">65 Kč</span><button class="add" type="button" aria-label="Přidat Coca-Colu Zero">Přidat</button></li>
+            <li data-id="fanta" data-name="Fanta Pomeranč 0,33 l" data-price="65"><div><b>Fanta Pomeranč</b><span>0,33 l</span></div><span class="price">65 Kč</span><button class="add" type="button" aria-label="Přidat Fantu">Přidat</button></li>
+            <li data-id="voda" data-name="Voda 0,33 l" data-price="65" data-opt="water"><div><b>Voda</b><span>0,33 l · perlivá nebo neperlivá</span></div><span class="price">65 Kč</span><button class="add" type="button" aria-label="Přidat vodu">Přidat</button></li>
+          </ul>
+        </div>
+      </div>
+
       <div class="menu-foot">
-        <span>Ceny a celé aktuální menu najdete v online menu.</span>
-        <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1Rv8iDwz6nuTC3BQ_boBFG0M3-esu1k1V?usp=share_link" target="_blank" rel="noopener">Zobrazit menu s cenami</a>
+        <span>Ceny podle nabídky na Woltu k 12. 10. 2026. Chcete jídlo až domů?</span>
+        <div>
+          <a class="btn btn-ghost" href="https://wolt.com/cs/cze/prague/restaurant/burger-empire1" target="_blank" rel="noopener">Rozvoz přes Wolt</a>
+          <a class="btn btn-ghost" href="https://www.foodora.cz/restaurant/tj5m/burger-empire-tj5m" target="_blank" rel="noopener">Foodora</a>
+        </div>
       </div>
     </div>
   </section>
@@ -271,9 +384,198 @@ footer{padding:40px 0 110px;color:var(--muted);font-size:15px;border-top:1px sol
 </footer>
 
 <nav class="bar" aria-label="Rychlé akce">
-  <a class="btn btn-gold" href="https://wolt.com/cs/cze/prague/restaurant/burger-empire1" target="_blank" rel="noopener">Objednat</a>
+  <button class="btn btn-gold cartbtn" type="button" data-cart>Košík <i data-count>0</i></button>
   <a class="btn btn-ghost" href="tel:+420771111513">Zavolat</a>
 </nav>
+
+<dialog id="cfg" aria-labelledby="cfg-t">
+  <form class="dlg" method="dialog">
+    <div class="dlg-h"><h3 id="cfg-t"></h3><button class="x" type="button" data-close aria-label="Zavřít">×</button></div>
+    <div class="dlg-b" id="cfg-b"></div>
+    <div class="dlg-f">
+      <div class="row"><span>Počet</span><span class="qty"><button type="button" data-q="-1" aria-label="Méně">−</button><output id="cfg-q">1</output><button type="button" data-q="1" aria-label="Více">+</button></span></div>
+      <button class="btn btn-gold full" type="submit" id="cfg-add"></button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="cart" aria-labelledby="cart-t">
+  <div class="dlg">
+    <div class="dlg-h"><h3 id="cart-t">Váš košík</h3><button class="x" type="button" data-close aria-label="Zavřít">×</button></div>
+    <div class="dlg-b" id="cart-b"></div>
+    <div class="dlg-f" id="cart-f"></div>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  // DEMO = true: objednávka se nikam neodesílá, jen se ukáže potvrzení.
+  // DEMO = false: hotová objednávka se otevře jako zpráva na WhatsApp restaurace.
+  var DEMO = true, WHATSAPP = '420771111513', OPEN = [11,15], CLOSE = [21,45], KEY = 'be-cart';
+  var OPTS = {
+    extra: {title:'Něco navíc?', multi:true, vals:[['Karamelizovaná cibule',46],['Jalapeño papričky',34],['Extra čedar',34],['Extra 60 g hovězího',70]]},
+    size:  {title:'Velikost', vals:[['Střední',0],['Velké',30]]},
+    sauce: {title:'Omáčka', vals:[['Bez omáčky',0],['Signature (domácí)',46],['BBQ (domácí)',59],['Lanýžová (domácí)',89],['Kečup',22],['Majonéza',22]]},
+    water: {title:'Jaká voda?', vals:[['Neperlivá',0],['Perlivá',0]]}
+  };
+  var $ = function(s, r){ return (r || document).querySelector(s); };
+  var kc = function(n){ return n.toLocaleString('cs-CZ') + ' Kč'; };
+  function h(tag, props){
+    var e = document.createElement(tag), i, k;
+    for (k in props || {}) { if (k === 'text') e.textContent = props[k]; else if (k in e) e[k] = props[k]; else e.setAttribute(k, props[k]); }
+    for (i = 2; i < arguments.length; i++) if (arguments[i]) e.append(arguments[i]);
+    return e;
+  }
+
+  var cart = [];
+  try { cart = JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) {}
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(cart)); } catch (e) {} }
+  function total(){ return cart.reduce(function(s, l){ return s + l.unit * l.qty; }, 0); }
+  function count(){ return cart.reduce(function(s, l){ return s + l.qty; }, 0); }
+  function badges(){ document.querySelectorAll('[data-count]').forEach(function(b){ b.textContent = count(); }); }
+  function toast(t){ var e = $('#toast'); e.textContent = t; e.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(function(){ e.classList.remove('on'); }, 1800); }
+  function put(line){
+    var same = cart.find(function(l){ return l.id === line.id && l.opts.join() === line.opts.join(); });
+    if (same) same.qty += line.qty; else cart.push(line);
+    save(); badges(); toast('Přidáno: ' + line.name);
+  }
+
+  /* configurator */
+  var cfg = $('#cfg'), cur = null;
+  function cfgPrice(){
+    var extra = 0;
+    cfg.querySelectorAll('input:checked').forEach(function(i){ extra += +i.value; });
+    cur.unit = cur.base + extra;
+    $('#cfg-add').textContent = 'Přidat do košíku · ' + kc(cur.unit * cur.qty);
+    $('#cfg-q').textContent = cur.qty;
+  }
+  function openCfg(el){
+    var d = el.dataset, body = $('#cfg-b'), desc = $('p', el);
+    cur = {id:d.id, name:d.name, base:+d.price, unit:+d.price, qty:1};
+    $('#cfg-t').textContent = d.name;
+    body.replaceChildren(desc ? h('p', {text:desc.textContent}) : '');
+    d.opt.split(',').forEach(function(key){
+      var g = OPTS[key], fs = h('fieldset', null, h('legend', {text:g.title}));
+      g.vals.forEach(function(v, i){
+        fs.append(h('label', {className:'opt'},
+          h('input', {type:g.multi ? 'checkbox' : 'radio', name:key, value:v[1], checked:!g.multi && i === 0, 'data-label':v[0]}),
+          h('span', {text:v[0]}), h('em', {text:v[1] ? '+ ' + kc(v[1]) : (g.multi ? '' : 'v ceně')})));
+      });
+      body.append(fs);
+    });
+    cfgPrice(); cfg.showModal();
+  }
+  cfg.addEventListener('change', cfgPrice);
+  cfg.addEventListener('click', function(e){
+    var q = e.target.dataset.q;
+    if (q) { cur.qty = Math.max(1, Math.min(20, cur.qty + +q)); cfgPrice(); }
+  });
+  cfg.addEventListener('submit', function(){
+    var opts = [];
+    cfg.querySelectorAll('input:checked').forEach(function(i){ if (i.dataset.label !== 'Bez omáčky') opts.push(i.dataset.label); });
+    put({id:cur.id, name:cur.name, unit:cur.unit, qty:cur.qty, opts:opts});
+  });
+  document.querySelectorAll('[data-id] .add').forEach(function(b){
+    b.addEventListener('click', function(){
+      var el = b.closest('[data-id]'), d = el.dataset;
+      if (d.opt) openCfg(el); else put({id:d.id, name:d.name, unit:+d.price, qty:1, opts:[]});
+    });
+  });
+
+  /* cart + checkout */
+  var dlg = $('#cart'), body = $('#cart-b'), foot = $('#cart-f'), step = 'cart', who = {};
+  function slots(){
+    var now = new Date(), out = [], t = new Date(now), day = 'dnes', i;
+    t.setMinutes(Math.ceil((t.getMinutes() + 20) / 15) * 15, 0, 0);
+    var open = new Date(now), close = new Date(now);
+    open.setHours(OPEN[0], OPEN[1], 0, 0); close.setHours(CLOSE[0], CLOSE[1], 0, 0);
+    if (t > close) { open.setDate(open.getDate() + 1); close.setDate(close.getDate() + 1); t = open; day = 'zítra'; }
+    else if (t < open) t = open; else out.push('Co nejdřív');
+    for (i = 0; t <= close && i < 48; i++, t = new Date(t.getTime() + 9e5))
+      out.push(day + ' ' + t.getHours() + ':' + ('0' + t.getMinutes()).slice(-2));
+    return out;
+  }
+  function field(label, input){ return h('label', {className:'field'}, h('span', {text:label}), input); }
+  function sumRow(){ return h('div', {className:'row total'}, h('span', {text:'Celkem'}), h('strong', {text:kc(total())})); }
+  function summary(){
+    return cart.map(function(l){ return l.qty + '× ' + l.name + (l.opts.length ? ' (' + l.opts.join(', ') + ')' : '') + ' – ' + kc(l.unit * l.qty); });
+  }
+  function render(){
+    badges(); body.scrollTop = 0;
+    if (step === 'done') return;
+    if (!cart.length) {
+      $('#cart-t').textContent = 'Váš košík';
+      body.replaceChildren(h('p', {className:'empty', text:'Košík je zatím prázdný. Vyberte si z menu.'}));
+      foot.replaceChildren(h('button', {className:'btn btn-gold full', type:'button', text:'Zpět na menu', onclick:function(){ dlg.close(); location.hash = '#menu'; }}));
+      return;
+    }
+    if (step === 'cart') {
+      $('#cart-t').textContent = 'Váš košík';
+      body.replaceChildren.apply(body, cart.map(function(l, i){
+        return h('div', {className:'line'},
+          h('div', null, h('b', {text:l.name}), l.opts.length ? h('small', {text:l.opts.join(', ')}) : ''),
+          h('span', {className:'price', text:kc(l.unit * l.qty)}),
+          h('span', {className:'qty'},
+            h('button', {type:'button', text:'−', 'aria-label':'Méně', onclick:function(){ l.qty--; if (l.qty < 1) cart.splice(i, 1); save(); render(); }}),
+            h('output', {text:l.qty}),
+            h('button', {type:'button', text:'+', 'aria-label':'Více', onclick:function(){ if (l.qty < 20) l.qty++; save(); render(); }})),
+          h('button', {className:'back', type:'button', text:'Odebrat', onclick:function(){ cart.splice(i, 1); save(); render(); }}));
+      }));
+      foot.replaceChildren(sumRow(),
+        h('button', {className:'btn btn-gold full', type:'button', text:'Pokračovat k objednávce', onclick:function(){ step = 'form'; render(); }}));
+      return;
+    }
+    $('#cart-t').textContent = 'Vyzvednutí';
+    var name = h('input', {name:'name', required:true, autocomplete:'name', value:who.name || ''}),
+        tel = h('input', {name:'tel', type:'tel', required:true, autocomplete:'tel', pattern:'[+0-9 ]{9,16}', placeholder:'777 123 456', value:who.tel || ''}),
+        when = h('select', {name:'when'}), note = h('textarea', {name:'note', rows:2, maxLength:200, value:who.note || ''});
+    slots().forEach(function(s){ when.append(h('option', {text:s})); });
+    var form = h('form', {id:'order'},
+      h('p', {text:'Vyzvednete si u nás na Anglické 17, Praha 2. Platíte na místě kartou nebo hotově.'}),
+      field('Jméno', name), field('Telefon', tel), field('Kdy si přijdete', when), field('Poznámka (nepovinné)', note));
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      who = {name:name.value.trim(), tel:tel.value.trim(), when:when.value, note:note.value.trim()};
+      finish();
+    });
+    body.replaceChildren(form);
+    var send = h('button', {className:'btn btn-gold full', type:'submit', text:'Odeslat objednávku · ' + kc(total())});
+    send.setAttribute('form', 'order');
+    foot.replaceChildren(sumRow(), send,
+      h('button', {className:'back', type:'button', text:'Zpět do košíku', onclick:function(){ step = 'cart'; render(); }}));
+  }
+  function finish(){
+    var lines = summary(), sum = kc(total());
+    if (!DEMO) {
+      var msg = ['Dobrý den, objednávka k vyzvednutí:'].concat(lines, ['Celkem: ' + sum, 'Vyzvednutí: ' + who.when, 'Jméno: ' + who.name + ', tel. ' + who.tel], who.note ? ['Poznámka: ' + who.note] : []);
+      window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(msg.join('\n')), '_blank', 'noopener');
+    }
+    step = 'done';
+    $('#cart-t').textContent = 'Objednávka';
+    var list = h('ul', {className:'recap'});
+    lines.forEach(function(t){ list.append(h('li', {text:t})); });
+    body.replaceChildren(
+      h('p', {className:'done', text:'Děkujeme!'}),
+      h('p', {text:who.name + ', vyzvednutí: ' + who.when + '. Anglická 17, Praha 2.'}),
+      list,
+      h('div', {className:'row total'}, h('span', {text:'Celkem na místě'}), h('strong', {text:sum})),
+      DEMO ? h('div', {className:'note'}, h('b', {text:'Tohle je ukázka webu. '}), 'Objednávka se nikam neodeslala a nic se nepřipravuje. Na ostrém webu by teď přišla restauraci. Máte hlad doopravdy? Objednejte přes Wolt nebo zavolejte.') : '');
+    foot.replaceChildren(
+      h('a', {className:'btn btn-gold full', href:'https://wolt.com/cs/cze/prague/restaurant/burger-empire1', target:'_blank', rel:'noopener', text:'Objednat přes Wolt'}),
+      h('button', {className:'back', type:'button', text:'Zavřít', onclick:function(){ dlg.close(); }}));
+    cart = []; save(); badges();
+  }
+  document.querySelectorAll('[data-cart]').forEach(function(b){
+    b.addEventListener('click', function(){ step = 'cart'; render(); dlg.showModal(); });
+  });
+  document.querySelectorAll('dialog').forEach(function(d){
+    d.addEventListener('click', function(e){ if (e.target === d || e.target.closest('[data-close]')) d.close(); });
+  });
+  badges();
+})();
+</script>
 
 </body>
 </html>
