@@ -61,9 +61,6 @@ header{position:sticky;top:0;z-index:20;background:rgba(20,16,12,.86);backdrop-f
 .facts span::before{content:"✦ ";color:var(--gold)}
 .hero-img{position:relative}
 .hero-img img{border-radius:28px;aspect-ratio:4/5;object-fit:cover;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.55)}
-.badge{position:absolute;left:-22px;bottom:34px;background:var(--cream);color:#1a120a;border-radius:16px;padding:14px 18px;box-shadow:0 14px 40px rgba(0,0,0,.4)}
-.badge strong{font-family:Fraunces,serif;font-size:30px;display:block;line-height:1}
-.badge small{font-weight:600;font-size:13px}
 
 /* sections */
 section{padding:88px 0}
@@ -166,14 +163,6 @@ dialog,.dlg-b{scrollbar-width:thin;scrollbar-color:var(--line) transparent}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--gold2);outline-offset:2px}
 
-/* reviews */
-.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.rev{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:16px}
-.stars{color:var(--gold);letter-spacing:3px}
-.rev blockquote{font-size:16.5px}
-.rev cite{font-style:normal;font-weight:800;color:var(--muted);margin-top:auto}
-.score{display:flex;align-items:center;gap:14px;margin-top:28px;color:var(--muted)}
-.score strong{font-family:Fraunces,serif;font-size:34px;color:var(--cream)}
 
 /* visit */
 .visit{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:stretch}
@@ -208,11 +197,9 @@ footer{padding:40px 0 110px;color:var(--muted);font-size:15px;border-top:1px sol
   .hero{grid-template-columns:1fr;gap:36px;padding-top:36px}
   .hero-img{order:-1}
   .hero-img img{aspect-ratio:4/3}
-  .badge{left:14px;bottom:14px}
   .why{grid-template-columns:repeat(2,1fr)}
   .menu{grid-template-columns:repeat(2,1fr)}
   .side{grid-template-columns:1fr}
-  .revs{grid-template-columns:1fr}
   .visit{grid-template-columns:1fr}
   .nav ul{display:none}
 }
@@ -244,7 +231,6 @@ footer{padding:40px 0 110px;color:var(--muted);font-size:15px;border-top:1px sol
     <ul>
       <li><a href="#menu">Menu</a></li>
       <li><a href="#standard">Zlatý standard</a></li>
-      <li><a href="#recenze">Recenze</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
     <button class="btn btn-gold cartbtn" type="button" data-cart>Košík <i data-count>0</i></button>
@@ -266,7 +252,6 @@ footer{padding:40px 0 110px;color:var(--muted);font-size:15px;border-top:1px sol
     </div>
     <div class="hero-img">
       <img src="img/podnik.jpg" alt="Dva smash burgery na litinových pánvích s belgickými hranolky a omáčkou" width="1024" height="1536" fetchpriority="high">
-      <div class="badge"><strong>9,6/10</strong><small>hodnocení na Woltu</small></div>
     </div>
   </div>
 
@@ -333,20 +318,6 @@ footer{padding:40px 0 110px;color:var(--muted);font-size:15px;border-top:1px sol
     </div>
   </section>
 
-  <section class="alt" id="recenze">
-    <div class="wrap">
-      <div class="head">
-        <span class="eyebrow">Recenze</span>
-        <h2>Co o nás říkají zákazníci</h2>
-        <p>4,9 z 5 na Googlu z 1 378 hodnocení a 9,6 z 10 na Woltu.</p>
-      </div>
-      <div class="revs">
-        <figure class="rev"><div class="stars">★★★★★</div><blockquote>„Smash burger se jmenuje smash oprávněně! Jídlo bylo opravdu výborné, slečna, co nás obsluhovala, byla profesionální a moc milá. Podniku dávám 11/10.“</blockquote><cite>Tereza</cite></figure>
-        <figure class="rev"><div class="stars">★★★★★</div><blockquote>„Jako vášnivá milovnice burgerů tyhle burgery zbožňuju! Chutné, máslové, porce jsou skvělé, stejně jako lanýžové hranolky.“</blockquote><cite>Teodora · přeloženo z angličtiny</cite></figure>
-        <figure class="rev"><div class="stars">★★★★★</div><blockquote>„Pochvala obsluze, slečna byla velmi milá. Burger byl famózní. Do kuchyně velikánská pochvala a klobouček.“</blockquote><cite>Sára</cite></figure>
-      </div>
-    </div>
-  </section>
 
   <section id="kontakt">
     <div class="wrap">
@@ -364,6 +335,7 @@ footer{padding:40px 0 110px;color:var(--muted);font-size:15px;border-top:1px sol
           <div class="cta">
             <a class="btn btn-gold" href="https://wa.me/420771111513" target="_blank" rel="noopener">Napsat na WhatsApp</a>
             <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=Anglick%C3%A1+391%2F17+Praha" target="_blank" rel="noopener">Navigovat</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Burger+Empire+Anglick%C3%A1+391%2F17+Praha" target="_blank" rel="noopener">Profil na Googlu</a>
           </div>
         </dl>
         <div class="map"><iframe title="Mapa: Burger Empire, Anglická 17, Praha" src="https://maps.google.com/maps?q=Burger%20Empire%2C%20Anglick%C3%A1%20391%2F17%2C%20Praha&z=16&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
@@ -374,11 +346,11 @@ footer{padding:40px 0 110px;color:var(--muted);font-size:15px;border-top:1px sol
 
 <footer>
   <div class="wrap foot">
-    <span>© 2026 Burger Empire · Premium Quality. Golden Taste. · Web: <a href="https://whytelynx.cz" target="_blank" rel="noopener">Whyte Lynx</a></span>
+    <span>© 2026 Burger Empire · Premium Quality. Golden Taste. · Web: Vladislav Zachariev, <a href="https://whytelynx.cz" target="_blank" rel="noopener">Whyte Lynx</a></span>
     <div class="social">
       <a href="https://www.instagram.com/burger_empire_prague/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.facebook.com/61586700953068/" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://www.tripadvisor.com/Restaurant_Review-g274707-d34105979-Reviews-Burger_Empire-Prague_Bohemia.html" target="_blank" rel="noopener">Tripadvisor</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Burger+Empire+Anglick%C3%A1+391%2F17+Praha" target="_blank" rel="noopener">Google</a>
     </div>
   </div>
 </footer>
